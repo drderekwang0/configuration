@@ -70,7 +70,7 @@
   # Set the default user `nixos`.
   users.users.nixos = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "libvirtd" ];
     initialPassword = "nixos";
   };
 
@@ -117,5 +117,9 @@
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = false;
   networking.hostId = "7229408b";
+
+  # Enable libvirt.
+  security.polkit.enable = true;
+  virtualisation.libvirtd.enable = true;
 }
 
