@@ -67,6 +67,13 @@
   #   ];
   # };
 
+  # Set the default user `nixos`.
+  users.users.nixos = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+    initialPassword = "nixos";
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   # environment.systemPackages = with pkgs; [
