@@ -121,9 +121,13 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
 
+  # Use Linux 6.7.
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_7;
+
   # Enable ZFS.
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = false;
+  boot.zfs.enableUnstable = true;
   networking.hostId = "7229408b";
 
   # Enable libvirt.
