@@ -133,5 +133,9 @@
   # Enable libvirt.
   security.polkit.enable = true;
   virtualisation.libvirtd.enable = true;
+
+  # Enable Nvidia driver.
+  nixpkgs.config.allowUnfree = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
 }
 
