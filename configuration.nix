@@ -127,7 +127,7 @@
   # Enable ZFS.
   boot.supportedFilesystems = [ "zfs" ];
   boot.zfs.forceImportRoot = false;
-  boot.zfs.enableUnstable = true;
+  boot.zfs.package = pkgs.zfs_unstable;
   networking.hostId = "7229408b";
 
   # Enable libvirt.
