@@ -136,5 +136,16 @@
   # Enable Nvidia driver.
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    nvidiaPersistenced = true;
+  };
+
+  # Enable OpenGL.
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
 }
 
